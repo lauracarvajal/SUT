@@ -70,12 +70,15 @@ io.sockets.on('connection', function (socket) {
     var authenticated = false;
     var name;
 
+    var clientIp = socket.client.conn.remoteAddress;
+    console.log('New client connected ', clientIp);
+
     // A client connected
     socket.on('init', function () {
         //debug('Headers',  socket.client.request.headers);
 
-        var clientIp = socket.client.conn.remoteAddress;
-        debug('New client connected ', clientIp);
+    var clientIp = socket.client.conn.remoteAddress;
+    console.log('New init ', clientIp);
 
         if (authenticated) {
             // Give the client the list of tunes
