@@ -2,9 +2,13 @@
 
 var express = require('express');
 var app = express();
+
+app.set('port', (process.env.PORT || 5000));
+
 var http = require('http');
 var debug = require('debug')('server');
-var server = http.createServer(app).listen(3000);
+var server = http.createServer(app).listen(app.get('port'));
+
 var io = require('socket.io')(server);
 var MongoClient = require('mongodb').MongoClient;
 
@@ -43,20 +47,19 @@ GLOBAL.pushRegistrationIds = [];
 // Sockets for this server
 GLOBAL.io = io;
 
-app.set('port', (process.env.PORT || 5000));
 
 // Host static files
 app.use(express.static(__dirname + '/public')); //jshint ignore:line
 app.use('/docs', express.static(__dirname + '/docs')); //jshint ignore:line
 
-app.get('/', function(request, response) {
-  response.send('Hello World YAY!');
-});
+// app.get('/', function(request, response) {
+//   response.send('Hello World YAY!');
+// });
 
 // Start the http server
-server.listen(app.get('port'), function () {
-    debug('Server listening at port %d', app.get('port'));
-});
+// server.listen(app.get('port'), function () {
+//     debug('Server listening at port %d', app.get('port'));
+// });
 
 // Load all available tunes and their votes
 fsManager.init();
