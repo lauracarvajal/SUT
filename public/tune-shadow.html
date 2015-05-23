@@ -1,0 +1,99 @@
+<template>
+<style>
+
+  .tune {
+      position: relative;
+      border-radius: 5px;
+      margin: 10px;
+      height: 80px;
+      border: 1px solid #ccc;
+      background-color: #fff;
+      overflow: hidden;
+      width: 230px;
+      cursor: pointer;
+  }
+
+  .voters {
+      display: inline-block;
+      position: absolute;
+      bottom: 8px;
+      right: 10px;
+      font-size: 0.8rem;
+  }
+
+  .name {
+      display: inline-block;
+      position: absolute;
+      top: 8px;
+      right: 10px;
+      font-size: 0.8rem;
+      font-weight: bold;
+  }
+
+  .image {
+      display: inline-block;
+      width: 80px;
+      height: 100%;
+      box-shadow: 0 0 5px 1px rgba(0,0,0,0.5);
+      position: relative;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-color: white;
+  }
+
+  .play {
+      box-shadow: 0px 0px 10px rgba(0,0,0,0.8);
+      background-color: rgba(255,255,255,0.5);
+      border: 3px solid rgba(155,155,155,0.5);
+      border-radius: 50%;
+      width: 30px;
+      height: 30px;
+      background-size: 30px;
+      position: absolute;
+      margin: auto;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+  }
+
+  .play::before,
+  .play::after {
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      margin: auto;
+      position: absolute;
+      content: "►";
+      width: 12px;
+      height: 12px;
+      line-height: 12px;
+
+  }
+
+  .play::after {
+      color: white;
+      font-size: 11px;
+      padding-left: 4px;
+  }
+
+  .play::before {
+      color: rgba(155,155,155,0.5);
+      font-size: 16px;
+  }
+
+  :host {
+  }
+
+</style>
+<div class="tune">
+    <div class="voters"><content select="tune-voters"></content></div>
+    <div class="name"><content select="tune-name"></content></div>
+    <div class="image">
+      <audio style="display: none" controls><source src="tunes/test.mp3" type="audio/mpeg"></source></audio>
+      <div class="play"></div>
+    </div>
+</div>
+</template>

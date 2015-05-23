@@ -1,0 +1,33 @@
+{
+  "name": "stand-up-tunes-server",
+  "version": "0.0.1",
+  "description": "Stand-Up Tunes Server",
+  "main": "server.js",
+  "author": "Laura Carvajal",
+  "dependencies": {
+    "cron": "*",
+    "debug": "*",
+    "domain": "*",
+    "express": "*",
+    "forever-monitor": "*",
+    "mongodb": "*",
+    "node-gcm": "*",
+    "node-static": "*",
+    "socket.io": "*",
+    "socket.io-client": "*",
+    "time": "*",
+    "webcomponents.js": "*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lauracarvajal/Stand-Up-Tunes"
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "bugs": {
+    "url": "https://github.com/lauracarvajal/Stand-Up-Tunes/issues"
+  },
+  "homepage": "https://github.com/lauracarvajal/Stand-Up-Tunes",
+  "license": "ISC"
+}

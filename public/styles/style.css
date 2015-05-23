@@ -1,0 +1,192 @@
+@font-face {
+    font-family:        Lato;
+    src:                url(lato/Lato-Regular.ttf);
+}
+
+@font-face {
+    font-family:        Lato;
+    font-weight:        bold;
+    src:                url(lato/Lato-Bold.ttf);
+}
+
+@font-face {
+    font-family:        Lato;
+    font-weight:        light;
+    src:                url(lato/Lato-Light.ttf);
+}
+
+@font-face {
+    font-family:        Lato;
+    font-weight:        lighter;
+    src:                url(lato/Lato-Thin.ttf);
+}
+
+h3 {
+    font-size:          1em;
+    margin: 0;
+}
+
+body {
+    font-family:        Lato, courier, Arial, sans-serif;
+    font-weight:        light;
+}
+
+p {
+    font-weight:        none;
+}
+
+.hidden {
+    display: none;
+}
+
+.tiny {
+    font-size:          0.5em;
+    font-weight:        lighter;
+    color:              #aaa;
+}
+
+.small {
+    font-size:          0.8em;
+    font-weight:        lighter;
+}
+
+.lookit {
+    color:              orange;
+}
+
+.userpic {
+    position: fixed;
+    top: 15px;
+    right: 15px;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+}
+
+/* TABLE */
+
+#tunes-container {
+    padding: 0;
+    display:                -webkit-flex;
+    display:                flex;
+    -webkit-flex-direction: row;
+    flex-direction:         row;
+    flex-wrap:              wrap;
+    -webkit-flex-wrap:      wrap;
+}
+
+/* UPLOAD BOX */
+
+#upload-box {
+
+    display:                -webkit-flex;
+    display:                flex;
+    -webkit-flex-direction: row;
+    -webkit-flex-wrap:      nowrap;
+    flex-direction:         row;
+    flex-wrap:              nowrap;
+
+}
+
+#upload-box #upload-area {
+    height:             26px;
+    -webkit-flex-grow:  2;
+    flex-grow:          2;
+}
+
+#upload-box #upload-button {
+    height:              26px;
+    line-height:        26px;
+    -webkit-flex-grow:  1;
+    flex-grow:          1;
+
+    border-style:       solid;
+    border-width:       1px;
+
+    color:              white;
+    background-color:   rgba(35, 112, 180, 0.9);
+    border-color:       rgba(35, 112, 180, 1);
+
+    text-align:         center;
+    font-size:          0.8rem;
+
+    cursor:             pointer;
+    transition:         background-color 0.3s ease;
+    border-radius:      4px;
+}
+
+#upload-area > input[type="text"] {
+
+    border-radius:      4px 0px 0px 4px;
+    border-style:       solid;
+    border-width:       1px;
+    border-color:       #ccc;
+    width:              100%;
+    height:             26px;
+    padding:            0px;
+    font-family:        arial, sans-serif;
+    font-size:          0.8rem;
+}
+
+@media only screen and (max-width: 500px) {
+
+    /* Let's render the button on the next line with full width on smaller devices */
+    #upload-area > input[type="text"] {
+        border-radius:          4px;
+    }
+
+    #upload-box {
+        -webkit-flex-direction: column;
+        flex-direction:         column;
+    }
+
+    #upload-box #upload-button {
+        margin-top:             10px;
+    }
+
+}
+
+/* BUTTONS */
+
+.button {
+
+    border-style:       solid;
+    border-width:       1px;
+
+    color:              white;
+    background-color:   rgba(35, 112, 180, 0.9);
+    border-color:       rgba(35, 112, 180, 1);
+
+    text-align:         center;
+    font-size:          0.8rem;
+
+    cursor:             pointer;
+    transition:         background-color 0.3s ease;
+}
+
+.button:hover {
+
+    background-color:   rgba(35, 112, 180, 0.7);
+}
+
+.button:active {
+
+    background-color:   rgba(15, 92, 160, 1);
+}
+
+/* MISC */
+
+.winner > .tune-name::after {
+    padding-right:  5px;
+    content:        '♕';
+    float:          left;
+    color:          orange;
+}
+
+.play-time {
+    color: green;
+}
+
+.userpic {
+    border: 1px solid red;
+}
