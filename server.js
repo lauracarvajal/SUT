@@ -49,13 +49,13 @@ app.set('port', (process.env.PORT || 5000));
 app.use(express.static(__dirname + '/public')); //jshint ignore:line
 app.use('/docs', express.static(__dirname + '/docs')); //jshint ignore:line
 
-// app.get('/', function(request, response) {
-//   response.send('Hello World YAY!');
-// });
+app.get('/', function(request, response) {
+  response.send('Hello World YAY!');
+});
 
 // Start the http server
 server.listen(app.get('port'), function () {
-    debug('Server listening at port %d', 3000);
+    debug('Server listening at port %d', app.get('port'));
 });
 
 // Load all available tunes and their votes
