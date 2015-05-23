@@ -47,19 +47,9 @@ GLOBAL.pushRegistrationIds = [];
 // Sockets for this server
 GLOBAL.io = io;
 
-
 // Host static files
 app.use(express.static(__dirname + '/public')); //jshint ignore:line
 app.use('/docs', express.static(__dirname + '/docs')); //jshint ignore:line
-
-// app.get('/', function(request, response) {
-//   response.send('Hello World YAY!');
-// });
-
-// Start the http server
-// server.listen(app.get('port'), function () {
-//     debug('Server listening at port %d', app.get('port'));
-// });
 
 // Load all available tunes and their votes
 fsManager.init();
@@ -97,7 +87,6 @@ io.sockets.on('connection', function (socket) {
 
             // Say Hi!
             socket.emit('welcome', name);
-
 
             // Tell everyone else this client joined
             socket.broadcast.emit('new user', name);

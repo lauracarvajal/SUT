@@ -1,1 +1,1 @@
-web: node server.js
+web: DEBUG=server,util,voting node server.js
